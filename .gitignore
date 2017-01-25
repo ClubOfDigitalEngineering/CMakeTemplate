@@ -3,7 +3,12 @@ MSVC2013/**
 MSVC2015/**
 unix/**
 .idea/**
+xcode/**
 
 
 #export headers:
 *Export.h
+
+#other
+.DS_Store
+._.DS_Store

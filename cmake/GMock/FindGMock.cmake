@@ -95,16 +95,19 @@ if(MSVC)
       msvc/googlemock/Debug
       msvc/googlemock/Release)
   endif()
+elseif(APPLE)
+      list(APPEND _gmock_libpath_suffixes
+        clang/googlemock)
 endif()
 
 find_path(GMOCK_INCLUDE_DIR gmock/gmock.h
   HINTS
-    $ENV{GMOCK_HOME}/googlemock/include 
+    $ENV{GMOCK_HOME}/googlemock/include
 )
 
-find_path(GMOCK_GTEST_INCLUDE_DIR gtest/gtest.h 
+find_path(GMOCK_GTEST_INCLUDE_DIR gtest/gtest.h
    HINTS
-     $ENV{GMOCK_HOME}/googletest/include 
+     $ENV{GMOCK_HOME}/googletest/include
 )
 
 mark_as_advanced(GMOCK_GTEST_INCLUDE_DIR)
@@ -133,4 +136,3 @@ if(GMOCK_FOUND)
   _gmock_append_debugs(GMOCK_MAIN_LIBRARIES GMOCK_MAIN_LIBRARY)
   set(GMOCK_BOTH_LIBRARIES ${GMOCK_LIBRARIES} ${GMOCK_MAIN_LIBRARIES})
 endif()
-
