@@ -1,0 +1,9 @@
+#build folder:
+MSVC2013/**
+MSVC2015/**
+unix/**
+.idea/**
+
+
+#export headers:
+*Export.h
