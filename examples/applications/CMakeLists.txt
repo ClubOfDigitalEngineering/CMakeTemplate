@@ -1,0 +1,12 @@
+add_subdirectory(BoostExample)
+add_subdirectory(GMockExample)
+add_subdirectory(QtExample)
+add_subdirectory(LibExample)
+add_subdirectory(LibExampleTest)
+add_subdirectory(VTKExample)
+add_subdirectory(AllTestExample)
+
+FIND_PACKAGE(CUDA)
+IF (CUDA_FOUND)
+	add_subdirectory(CudaExample)
+ENDIF()
