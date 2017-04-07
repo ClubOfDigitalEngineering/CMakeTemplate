@@ -25,12 +25,7 @@ endif()
 
 if(APPLE)
    set(CMAKE_CXX_FLAGS -std=c++11)
-   set(PLATFORM clang64)
 endif()
-if(WIN32)
-   set(PLATFORM MSVC2013)
-endif()
-message(STATUS "Build Project for ${PLATFORM}")
 
 
 #############################################################
@@ -57,7 +52,6 @@ sharedLibs()
 #############################################################
 ###		SUBDIRECTORIES									  ###
 #############################################################
-
 
 option(BUILD_EXAMPLES "Builds the examples." ON)
 

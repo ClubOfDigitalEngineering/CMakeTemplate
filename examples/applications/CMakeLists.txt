@@ -45,4 +45,37 @@ ELSE()
 	MESSAGE("CUDA on system not found - skip example")
 ENDIF()
 
+#Metis
+include(${CMAKE_SOURCE_DIR}/cmake/Metis/FindMetis.cmake)
+IF (METIS_FOUND)
+	add_subdirectory(MetisExample)
+ELSE()
+	MESSAGE("Metis on system not found - skip example")
+ENDIF()
+
+#JsonCpp
+include(${CMAKE_SOURCE_DIR}/cmake/JsonCpp/FindJsonCpp.cmake)
+IF (JSONCPP_FOUND)
+	add_subdirectory(JsonCppExample)
+ELSE()
+	MESSAGE("JsonCpp on system not found - skip example")
+ENDIF()
+
+#MPI
+find_package(MPI)
+IF (MPI_FOUND)
+	add_subdirectory(MPIExample)
+ELSE()
+	MESSAGE("MPI on system not found - skip example")
+ENDIF()
+
+#OpenMP
+find_package(OpenMP)
+IF (OPENMP_FOUND)
+	add_subdirectory(OpenMPExample)
+ELSE()
+	MESSAGE("OpenMP on system not found - skip example")
+ENDIF()
+
+
 MESSAGE(STATUS "... finish building examples")
