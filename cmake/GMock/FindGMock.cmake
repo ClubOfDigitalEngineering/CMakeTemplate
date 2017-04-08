@@ -73,8 +73,7 @@ function(_gmock_find_library _name)
     NAMES ${ARGN}
     HINTS
       $ENV{GMOCK_HOME}
-      ${GMOCK_HOME}
-    PATH_SUFFIXES ${_gmock_libpath_suffixes}
+      ${GMOCK_LIBRARIES_PATH}
   )
   mark_as_advanced(${_name})
 endfunction()
@@ -102,12 +101,12 @@ endif()
 
 find_path(GMOCK_INCLUDE_DIR gmock/gmock.h
   HINTS
-    $ENV{GMOCK_HOME}/googlemock/include
+    ${GMOCK_ROOT}/googlemock/include
 )
 
 find_path(GMOCK_GTEST_INCLUDE_DIR gtest/gtest.h
    HINTS
-     $ENV{GMOCK_HOME}/googletest/include
+     ${GMOCK_ROOT}/googletest/include
 )
 
 mark_as_advanced(GMOCK_GTEST_INCLUDE_DIR)

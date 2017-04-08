@@ -2,7 +2,6 @@ MESSAGE(STATUS "starting to build examples...")
 
 #independent from 3rd party libs
 add_subdirectory(LibExample)
-
 #GMock
 include(${CMAKE_SOURCE_DIR}/cmake/GMock/FindGMock.cmake)
 IF (GMock_FOUND)

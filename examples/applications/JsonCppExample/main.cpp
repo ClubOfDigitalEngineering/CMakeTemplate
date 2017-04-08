@@ -7,7 +7,9 @@
 using namespace std;
 
 int main() {
-	ifstream ifs("alice.json");
+	//TODO: Add path to alice.json
+	std::string path = "C:/Users/Soeren/Documents/Templates/CMakeTemplate/examples/applications/JsonCppExample/alice.json";
+	ifstream ifs(path);
 	Json::Reader reader;
 	Json::Value obj;
 	reader.parse(ifs, obj); // reader can also read strings

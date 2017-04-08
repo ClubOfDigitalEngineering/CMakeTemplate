@@ -59,14 +59,10 @@ if(NOT METIS_INCLUDE_DIR)
   )
 endif()
 
-if(METIS_LIBRARIES)
-  set(METIS_LIBRARY ${METIS_LIBRARIES})
-endif()
 if(NOT METIS_LIBRARY)
   find_library(METIS_LIBRARY
     NAMES metis metis${METIS_LIB_SUFFIX}
-    HINTS ${METIS_ROOT} ENV METIS_ROOT
-	PATH_SUFFIXES "build//libmetis//Debug"
+    HINTS ${METIS_LIBRARIES_PATH}
     DOC "Directory where the METIS library is located"
   )
 endif()
@@ -87,38 +83,15 @@ if(NOT METIS_VERSION_STRING AND METIS_INCLUDE_DIR AND EXISTS "${METIS_INCLUDE_DI
   unset(version_pattern)
 endif()
 
-# Try compiling and running test program
-if(METIS_INCLUDE_DIR AND METIS_LIBRARY)
-
-  # Set flags for building test program
-  set(CMAKE_REQUIRED_INCLUDES ${METIS_INCLUDE_DIR})
-  set(CMAKE_REQUIRED_LIBRARIES ${METIS_LIBRARY})
-
-  # Build and run test program
-  include(CheckCSourceRuns)
-  check_c_source_runs("
-#define METIS_EXPORT
-#include \"metis.h\"
-int main( int argc, char* argv[] )
-{
-  // FIXME: Find a simple but sensible test for METIS
-  return 0;
-}
-" METIS_TEST_RUNS)
-
-  unset(CMAKE_REQUIRED_INCLUDES)
-  unset(CMAKE_REQUIRED_LIBRARIES)
-endif()
-
 # Standard package handling
 include(FindPackageHandleStandardArgs)
 if(CMAKE_VERSION VERSION_GREATER 2.8.2)
   find_package_handle_standard_args(METIS
-    REQUIRED_VARS METIS_LIBRARY METIS_INCLUDE_DIR METIS_TEST_RUNS
+    REQUIRED_VARS METIS_LIBRARY METIS_INCLUDE_DIR
     VERSION_VAR METIS_VERSION_STRING)
 else()
   find_package_handle_standard_args(METIS
-    REQUIRED_VARS METIS_LIBRARY METIS_INCLUDE_DIR METIS_TEST_RUNS)
+    REQUIRED_VARS METIS_LIBRARY METIS_INCLUDE_DIR)
 endif()
 
 if(METIS_FOUND)

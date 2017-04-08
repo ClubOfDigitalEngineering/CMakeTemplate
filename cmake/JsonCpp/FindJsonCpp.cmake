@@ -62,8 +62,7 @@ find_path(JSONCPP_INCLUDE_DIRS json/json.h
 
 find_library(JSONCPP_LIBRARIES
     NAMES jsoncpp.lib 
-    HINTS ${JSONCPP_ROOT} ENV JSONCPP_ROOT
-    PATH_SUFFIXES "build//src//lib_json//Debug"
+    HINTS ${JSONCPP_LIBRARIES_PATH}
     DOC "Directory where the JSONCPP library is located"
 )
 
