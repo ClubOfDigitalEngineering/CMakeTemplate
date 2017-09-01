@@ -1,2 +1,2 @@
-include(${CMAKE_SOURCE_DIR}/cmake/Boost/Link.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/Boost/Link.cmake)
 linkBoost(${targetName})

@@ -22,27 +22,32 @@ endif()
 if(POLICY CMP0047)
    CMAKE_POLICY(SET CMP0047 NEW)
 endif()
+if(POLICY CMP0053)
+   CMAKE_POLICY(SET CMP0053 NEW)
+endif()
+
 
 if(APPLE)
    set(CMAKE_CXX_FLAGS -std=c++11)
 endif()
 
 #############################################################
-###		ENVIRONMENT         						  ###
+###	                    ENVIRONMENT                       ###
 #############################################################
-include(environment.cmake)
+set(cmakeMacroPath "CMakeMacros")
+include(${cmakeMacroPath}/Machinefiles/environment.cmake)
 #############################################################
-###		GENERAL MACROS          						  ###
+###	                  GENERAL MACROS                      ###
 #############################################################
 
-include(${CMAKE_SOURCE_DIR}/cmake/general/BuildTarget.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/general/BuildTargetUtilities.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/general/EndingsToCollect.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/general/FileUtilities.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/BuildTarget.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/BuildTargetUtilities.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/EndingsToCollect.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/FileUtilities.cmake)
 
 
 #############################################################
-###		GENERAL SETTINGS         						  ###
+###                   GENERAL SETTINGS                    ###
 #############################################################
 
 project(GenericCMakeProject)

@@ -1,2 +1,2 @@
-include (${CMAKE_SOURCE_DIR}/cmake/GMock/Link.cmake)
+include (${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/GMock/Link.cmake)
 linkGMock(${targetName})

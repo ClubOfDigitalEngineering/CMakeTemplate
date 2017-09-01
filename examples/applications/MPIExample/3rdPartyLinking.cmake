@@ -1,2 +1,2 @@
-include (${CMAKE_SOURCE_DIR}/cmake/MPI/Link.cmake)
+include (${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/MPI/Link.cmake)
 linkMPI(${targetName})

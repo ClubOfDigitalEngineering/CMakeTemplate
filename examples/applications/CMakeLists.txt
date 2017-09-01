@@ -3,7 +3,7 @@ MESSAGE(STATUS "starting to build examples...")
 #independent from 3rd party libs
 add_subdirectory(LibExample)
 #GMock
-include(${CMAKE_SOURCE_DIR}/cmake/GMock/FindGMock.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/GMock/FindGMock.cmake)
 IF (GMock_FOUND)
 	add_subdirectory(LibExampleTest)
 	add_subdirectory(AllTestExample)
@@ -45,7 +45,7 @@ ELSE()
 ENDIF()
 
 #Metis
-include(${CMAKE_SOURCE_DIR}/cmake/Metis/FindMetis.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/Metis/FindMetis.cmake)
 IF (METIS_FOUND)
 	add_subdirectory(MetisExample)
 ELSE()
@@ -53,7 +53,7 @@ ELSE()
 ENDIF()
 
 #JsonCpp
-include(${CMAKE_SOURCE_DIR}/cmake/JsonCpp/FindJsonCpp.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/JsonCpp/FindJsonCpp.cmake)
 IF (JSONCPP_FOUND)
 	add_subdirectory(JsonCppExample)
 ELSE()
