@@ -1,9 +1,3 @@
-#############################################################
-###									  ###
-###		       						  ###
-###		       						  ###
-#############################################################
-
 
 cmake_minimum_required(VERSION 2.8)
 
@@ -32,12 +26,12 @@ if(APPLE)
 endif()
 
 #############################################################
-###	                    ENVIRONMENT                       ###
+###                     ENVIRONMENT                       ###
 #############################################################
 set(cmakeMacroPath "CMakeMacros")
 include(${cmakeMacroPath}/Machinefiles/environment.cmake)
 #############################################################
-###	                  GENERAL MACROS                      ###
+###                   GENERAL MACROS                      ###
 #############################################################
 
 include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/BuildTarget.cmake)
@@ -58,7 +52,7 @@ sharedLibs()
 
 
 #############################################################
-###		SUBDIRECTORIES									  ###
+###                   SUBDIRECTORIES                      ###
 #############################################################
 
 option(BUILD_EXAMPLES "Builds the examples." ON)
