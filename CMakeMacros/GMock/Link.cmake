@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/GMock/FindGMock.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/FindGMock.cmake)
 macro(linkGMock targetName)
 	add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY)
 
