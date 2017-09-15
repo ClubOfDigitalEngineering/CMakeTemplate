@@ -1,1 +1,1 @@
-include (${CMAKE_SOURCE_DIR}/cmake/Cuda/Link.cmake)
+include (${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/Cuda/Link.cmake)

@@ -1,2 +1,2 @@
-include (${CMAKE_SOURCE_DIR}/cmake/JsonCpp/Link.cmake)
+include (${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/JsonCpp/Link.cmake)
 linkJsonCpp(${targetName})
