@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/cmake/general/BuildTarget.cmake)
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/general/BuildTarget.cmake)
 FIND_PACKAGE(CUDA REQUIRED)
 MACRO(createCudaLIB targetName sourceFiles linkDirs libsToLink includeDirs)
 #input: lib, libtype (e.g. shared), src files

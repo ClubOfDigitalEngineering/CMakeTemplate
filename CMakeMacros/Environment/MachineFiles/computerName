@@ -7,6 +7,11 @@
 SET(GMOCK_ROOT "C:\\Libraries\\GoogleMock\\gmock-1.7.0" CACHE INTERNAL "GMOCK ROOT")
 SET(GMOCK_LIBRARIES_PATH "C:\\Libraries\\GoogleMock\\gmock-1.7.0\\MSVC2015_dynamic\\googlemock\\Debug" CACHE INTERNAL "GMOCK LIB")
 
+SET(QT_LOCATION "C:\\Libraries\\Qt\\5.9.1\\msvc2017_64")
+set(CMAKE_PREFIX_PATH ${QT_LOCATION})
+SET(QT_QPA_PLATFORM_PLUGIN_PATH ${QT_LOCATION}/plugins/platforms)
+SET(QTDIR "${QT_LOCATION}/bin" CACHE INTERNAL "QT DIR")
+
 SET(METIS_ROOT "C:\\Libraries\\Metis\\metis-5.1.0" CACHE INTERNAL "METIS ROOT")
 SET(METIS_LIBRARIES_PATH "C:\\Libraries\\Metis\\metis-5.1.0\\build\\libmetis\\Debug" CACHE INTERNAL "METIS LIB")
 
