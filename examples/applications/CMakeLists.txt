@@ -2,6 +2,7 @@ MESSAGE(STATUS "starting to build examples...")
 
 #independent from 3rd party libs
 add_subdirectory(LibExample)
+
 #GMock
 include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/GMock/FindGMock.cmake)
 IF (GMock_FOUND)
@@ -58,6 +59,14 @@ IF (JSONCPP_FOUND)
 	add_subdirectory(JsonCppExample)
 ELSE()
 	MESSAGE("JsonCpp on system not found - skip example")
+ENDIF()
+
+#FFTW
+include(${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/fftw/FindFftw.cmake)
+IF (FFTW_FOUND)
+	add_subdirectory(FFTWExample)
+ELSE()
+	MESSAGE("FFTW on system not found - skip example")
 ENDIF()
 
 #MPI
