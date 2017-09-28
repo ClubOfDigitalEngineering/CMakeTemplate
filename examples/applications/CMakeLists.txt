@@ -1,5 +1,9 @@
 MESSAGE(STATUS "starting to build examples...")
 
+#group targets to folders:
+set(CSharpExamples "CSharp_Examples")
+set(CppExamples "Cpp_Examples")
+
 #independent from 3rd party libs
 add_subdirectory(LibExample)
 
@@ -35,14 +39,6 @@ IF (VTK_FOUND)
 	add_subdirectory(VTKExample)
 ELSE()
 	MESSAGE("VTK on system not found - skip example")
-ENDIF()
-
-#Cuda
-find_package(CUDA)
-IF (CUDA_FOUND)
-	add_subdirectory(CudaExample)
-ELSE()
-	MESSAGE("CUDA on system not found - skip example")
 ENDIF()
 
 #Metis
@@ -85,5 +81,14 @@ ELSE()
 	MESSAGE("OpenMP on system not found - skip example")
 ENDIF()
 
+option(BUILD_CudaExample "build cuda example" ON)
+if(BUILD_CudaExample)
+    add_subdirectory(CudaExample)
+endif()
+
+option(BUILD_CSharpExample "build c# example" ON)
+if(BUILD_CSharpExample)
+    add_subdirectory(CSharpExample)
+endif()
 
 MESSAGE(STATUS "... finish building examples")

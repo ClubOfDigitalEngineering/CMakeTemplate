@@ -9,6 +9,7 @@ include(CMakePackage.cmake)
 
 set(CMAKE_AUTOMOC ON)
 buildExe(${targetName} "${MY_SRCS}" "${linkDirectories}" "${libsToLink}" "${includeDirectories}")
+groupTarget(${targetName} ${CppExamples})
 
 #Specify the linking to 3rdParty libs
 include(3rdPartyLinking.cmake)

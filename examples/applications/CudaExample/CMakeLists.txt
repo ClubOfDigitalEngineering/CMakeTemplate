@@ -7,8 +7,9 @@ set(includeDirectories "")
 #glob files and save in MY_SRCS
 include(CMakePackage.cmake)
 
-include (${CMAKE_SOURCE_DIR}/${cmakeMacroPath}/Cuda/CudaCreateTarget.cmake)
-createCudaEXE(${targetName} "${MY_SRCS}" "${linkDirectories}" "${libsToLink}" "${includeDirectories}")
+enable_language(CUDA)
+buildExe(${targetName} "${MY_SRCS}" "${linkDirectories}" "${libsToLink}" "${includeDirectories}")
+groupTarget(${targetName} ${CppExamples})
 
 #Specify the linking to 3rdParty libs
 include(3rdPartyLinking.cmake)
