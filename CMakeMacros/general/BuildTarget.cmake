@@ -4,17 +4,17 @@ macro(buildExe targetName sourceFiles linkDirs libsToLink includeDirs)
     add_executable(${targetName} "${sourceFiles}")
 
     linkLibraries(${targetName} "${libsToLink}")
-    setIncludeDirectories("${includeDirs}")
+    setIncludeDirectories(${targetName} "${includeDirs}")
 
 endmacro(buildExe)
 
-macro(buildLib libName sourceFiles linkDirs libsToLink includeDirs)
+macro(buildLib targetName sourceFiles linkDirs libsToLink includeDirs)
     setLinkDirectories("${linkDirs}")
 
-    add_library(${libName} ${LIB_TYPE} ${sourceFiles})
+    add_library(${targetName} ${LIB_TYPE} ${sourceFiles})
 
-    linkLibraries(${libName} "${libsToLink}")
-    setIncludeDirectories("${includeDirs}")
+    linkLibraries(${targetName} "${libsToLink}")
+    setIncludeDirectories(${targetName} "${includeDirs}")
 
 endmacro(buildLib)
 
@@ -31,13 +31,11 @@ macro(linkLibraries targetName libsToLink)
     endforeach()
 endmacro(linkLibraries)
 
-macro(setIncludeDirectories includeDirs)
+macro(setIncludeDirectories targetName includeDirs)
     foreach(dir ${includeDirs})
-        include_directories(${dir})
+        target_include_directories(${targetName} PRIVATE ${dir})
     endforeach()
 endmacro(setIncludeDirectories)
-
-
 
 include (GenerateExportHeader)
 macro(generateExportHeader libName path)
@@ -50,3 +48,7 @@ macro(generateExportHeader libName path)
                     )
     endif()
 endmacro(generateExportHeader)
+
+macro(groupTarget targetName folderName)
+    set_property( TARGET  ${targetName}  PROPERTY  FOLDER  ${folderName} )
+endmacro(groupTarget)
