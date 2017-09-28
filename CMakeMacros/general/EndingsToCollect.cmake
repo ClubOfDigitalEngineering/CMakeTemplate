@@ -18,13 +18,14 @@ endmacro(resetFileEndingsToCollect)
 
 
 
-
-
 macro(addCAndCPPFileTypes)
 	addFileEndingToCollect("*.h")
 	addFileEndingToCollect("*.c")
 	addFileEndingToCollect("*.cpp")
+	addFileEndingToCollect("*.cxx")
 	addFileEndingToCollect("*.hpp")
+	addFileEndingToCollect("*.cu")
+	addFileEndingToCollect("*.cuh")
 endmacro(addCAndCPPFileTypes)
 
 
