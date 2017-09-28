@@ -57,8 +57,8 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 #############################################################
 ###                   SUBDIRECTORIES                      ###
 #############################################################
-option(BUILD_EXAMPLES "Builds the examples." ON)
+option(EXAMPLES_BUILD_ALL "Builds the examples." ON)
 
-if(BUILD_EXAMPLES)
+if(EXAMPLES_BUILD_ALL)
    add_subdirectory(examples/applications)
 endif()
