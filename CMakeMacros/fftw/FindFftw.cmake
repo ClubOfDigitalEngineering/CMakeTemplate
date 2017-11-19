@@ -5,10 +5,8 @@ find_path(FFTW_INCLUDE_DIRS fftw3.h
     DOC "Directory where the FFTW header files are located"
 )
 
-
-
 find_library(FFTW_LIBRARIES
-    NAMES libfftw3-3.lib libfftw3f-3.lib libfftw3l-3.lib
+    NAMES libfftw3-3.lib libfftw3f-3.lib libfftw3l-3.lib libfftw3.dylib
     HINTS ${FFTW_LIBRARIES_PATH}
     DOC "Directory where the FFTW library is located"
 )

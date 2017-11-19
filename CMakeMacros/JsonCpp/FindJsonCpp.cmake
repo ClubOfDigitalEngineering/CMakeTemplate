@@ -8,7 +8,7 @@ find_path(JSONCPP_INCLUDE_DIRS json/json.h
 
 
 find_library(JSONCPP_LIBRARIES
-    NAMES jsoncpp.lib 
+    NAMES jsoncpp.lib libjsoncpp.a
     HINTS ${JSONCPP_LIBRARIES_PATH}
     DOC "Directory where the JSONCPP library is located"
 )
