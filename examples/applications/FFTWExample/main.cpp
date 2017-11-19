@@ -1,4 +1,4 @@
-//example from https://en.wikibooks.org/wiki/JsonCpp
+//example from https://github.com/undees/fftw-example/blob/master/fftw_example.c
 
 #include <iostream>
 #include <fftw3.h>
