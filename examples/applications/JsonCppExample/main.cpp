@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <json/json.h>
 
 std::string getStringFromStream(std::ifstream &stream)
@@ -32,7 +33,7 @@ int main()
 {
     std::string path = JSONPATH;
     std::string jsonFilePath = path + "/alice.json";
-    std::ifstream jsonStream = std::ifstream(jsonFilePath);
+    std::ifstream jsonStream(jsonFilePath);
 
     std::string jsonFile = getStringFromStream(jsonStream);
     const char* beginDoc = getPointerFromString(jsonFile);
