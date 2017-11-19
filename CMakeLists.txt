@@ -25,7 +25,9 @@ endif()
 
 if(APPLE)
    set(CMAKE_CXX_FLAGS -std=c++11)
+   add_definitions("-Wno-c++11-extensions")
 endif()
+
 
 #############################################################
 ###                     ENVIRONMENT                       ###

@@ -10,5 +10,7 @@ buildLib(${targetName} "${MY_SRCS}" "${linkDirectories}" "${libsToLink}" "${incl
 groupTarget(${targetName} ${CppExamples})
 generateExportHeader(${targetName} ${CMAKE_SOURCE_DIR}/examples/src/${targetName})
 
+add_definitions(-Wno-attributes)
+
 #Specify the linking to 3rdParty libs
 include(3rdPartyLinking.cmake)
