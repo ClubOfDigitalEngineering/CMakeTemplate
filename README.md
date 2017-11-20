@@ -29,6 +29,7 @@ This repository is a common template for c++ projects with cmake.
 - OpenMP
 - Qt
 - VTK
+- Git + additional build Infos
 
 
 
