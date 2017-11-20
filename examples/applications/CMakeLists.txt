@@ -6,9 +6,9 @@ set(CppExamples "Cpp_Examples")
 
 
 option(EXAMPLES_BUILD_Cpp "build cpp example" ON)
-option(EXAMPLES_BUILD_CSharp "build c# example" ON)
+option(EXAMPLES_BUILD_CSharp "build c# example" OFF)
 
-option(EXAMPLES_Cuda "build cuda example" ON)
+option(EXAMPLES_Cuda "build cuda example" OFF)
 option(EXAMPLES_Boost "build boost example" ON)
 option(EXAMPLES_Qt5Charts "build qt 5 charts example" ON)
 option(EXAMPLES_Lib "build lib example" ON)
@@ -19,6 +19,7 @@ option(EXAMPLES_MPI "build MPI example" ON)
 option(EXAMPLES_OpenMP "build OpenMP example" ON)
 option(EXAMPLES_FFTW "build fftw example" ON)
 option(EXAMPLES_JsonCpp "build JsonCpp example" ON)
+option(EXAMPLES_git "build git example" ON)
 
 if(EXAMPLES_BUILD_Cpp)
 	MESSAGE(STATUS "building c++ examples...")
@@ -105,6 +106,13 @@ if(EXAMPLES_BUILD_Cpp)
 	if(EXAMPLES_Cuda)
 		add_subdirectory(CudaExample)
 	endif()
+
+	#Git
+	IF (EXAMPLES_git)
+		add_subdirectory(GitRevisionExample)
+	ELSE()
+		MESSAGE("git - skip example")
+	ENDIF()
 
 endif() # build cpp examples
 
