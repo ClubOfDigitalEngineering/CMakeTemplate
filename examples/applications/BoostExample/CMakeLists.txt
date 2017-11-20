@@ -1,4 +1,4 @@
-set(targetName BoostExample)     #REQUIRED#
+setTargetNameToFolderName(${CMAKE_CURRENT_LIST_DIR})
 
 set(linkDirectories "")
 set(libsToCollect "")

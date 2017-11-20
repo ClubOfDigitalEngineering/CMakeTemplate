@@ -1,4 +1,4 @@
-set(targetName MetisExample)       #REQUIRED#
+setTargetNameToFolderName(${CMAKE_CURRENT_LIST_DIR})
 
 set(linkDirectories "")
 set(libsToLink "")
